@@ -9,6 +9,6 @@ import Videomgame from '../images/videogame.svg';
 import World from '../images/world.svg';
 
 export const tagIcons = {
-  GAME: <Videomgame />,
-  WEB: <World />,
+  [GAME]: <Videomgame />,
+  [WEB]: <World />,
 };

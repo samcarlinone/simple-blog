@@ -1,11 +1,13 @@
 import React from 'react';
 import Envelope from '../images/baseline-email-24px.svg';
 import Octicon from '../images/Octicons-mark-github.svg';
+import SidebarTags from './SidebarTags';
 
-export default ({tags}) => {
+export default ({tags, setTags}) => {
   return (
     <div className="sidebar">
       <h1 className="sidebar-title">Code && Comments</h1>
+      <SidebarTags tags={tags} setTags={setTags} />
       <div className="sidebar-about">
         <p>Hi, I'm Sam. Computer Science student at Grove City College.</p>
         <p>I've specialized in web applications and game development. And have wide experience in many areas, from algorithms to robotics.</p>

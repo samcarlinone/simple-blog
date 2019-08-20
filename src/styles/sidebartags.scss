@@ -1,0 +1,55 @@
+.sidebartags-container {
+  min-width: 100%;
+
+  h3 {
+    margin: 0 8px 8px 8px;
+  }
+}
+.sidebartags {
+  display: flex;
+
+  min-width: 100%;
+
+  &-tag {
+    padding: 4px;
+    margin: 4px;
+
+    display: flex;
+    align-items: center;
+    border: 1px solid #c51111;
+
+    cursor: pointer;
+
+    text-transform: capitalize;
+    user-select: none;
+
+    & > svg {
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background-color: scale-color(#c51111, $lightness: +90%);
+    }
+
+    &:active {
+      background-color: scale-color(#c51111, $lightness: +80%);
+    }
+
+    &.active {
+      color: #fff;
+      background-color: #c51111;
+
+      & > svg {
+        fill: #fff;
+      }
+  
+      &:hover {
+        background-color: scale-color(#c51111, $lightness: -10%);
+      }
+  
+      &:active {
+        background-color: scale-color(#c51111, $lightness: -20%);
+      }
+    }
+  }
+}

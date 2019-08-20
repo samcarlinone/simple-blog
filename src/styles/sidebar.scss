@@ -37,12 +37,16 @@
         color: #c51111;
       }
 
+      &:visited {
+        color: scale-color(#c51111, $saturation: -30%, $lightness: -40%);
+      }
+
       &:hover {
         color: scale-color(#c51111, $lightness: +30%);
       }
 
-      &:visited {
-        color: scale-color(#c51111, $saturation: -30%, $lightness: -40%);
+      &:active {
+        color: scale-color(#c51111, $lightness: +50%);
       }
     }
 
