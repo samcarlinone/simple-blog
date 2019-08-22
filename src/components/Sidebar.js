@@ -2,11 +2,16 @@ import React from 'react';
 import Envelope from '../images/baseline-email-24px.svg';
 import Octicon from '../images/Octicons-mark-github.svg';
 import SidebarTags from './SidebarTags';
+import {Link} from 'react-router-dom';
 
 export default ({tags, setTags}) => {
   return (
     <div className="sidebar">
-      <h1 className="sidebar-title">Code && Comments</h1>
+      <h1 className="sidebar-title">
+        <Link to="/" className="sidebar-title-anchor">
+          Code && Comments
+        </Link>
+      </h1>
       <SidebarTags tags={tags} setTags={setTags} />
       <div className="sidebar-about">
         <p>Hi, I'm Sam. Computer Science student at Grove City College.</p>

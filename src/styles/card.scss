@@ -52,13 +52,14 @@
 
   &-more {
     margin-left: auto;
-    box-shadow: 1px 1px 2px #C5111191;
-    color: #fff;
     border: none;
     outline: none;
     padding: 2px 8px;
-
+    
+    box-shadow: 1px 1px 2px #C5111191;
+    color: #fff;
     background-color: #c51111;
+    text-decoration: none;
 
     &:hover {
       box-shadow: 2px 2px 4px #C5111191;

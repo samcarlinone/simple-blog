@@ -1,55 +1,57 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-
+import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
 
 import Sidebar from './Sidebar';
 import CardList from './CardList';
+import FourOhFour from './FourOhFour';
 
 import {articles} from './articles';
 import {tagList} from './tags';
 import Article from './Article';
 
-const BLOG_TITLE = 'C & C';
-
-function App () {
+function App ({history}) {
   const [tags, setTags] = useState(tagList.map(tag => ({tag, active: false})));
-  const [reading, setReading] = useState(null);
-
-  useEffect(() => {
-    if (reading) {
-      history.pushState(
-        reading,
-        `${BLOG_TITLE} | ${reading.title}`,
-        `${reading.slug}`
-      );
-    } else {
-      history.pushState(null, BLOG_TITLE, '');
-    }
-  });
-
-  const onNav = () => {
-    const path = window.location.pathname.slice(1);
-    setReading(articles.find(a => a.slug === path));
-  }
-
-  useEffect(() => {
-    onNav();
-
-    window.addEventListener('popstate', onNav);
-
-    return () => window.removeEventListener('popstate', onNav);
-  }, []);
 
   return <>
-    {reading
-      ? <Article article={reading} />
-      : <CardList articles={articles} tags={tags} onReadMore={setReading} />
-    }
+    <Route 
+      path="/item/:slug" 
+      render={({match}) => {
+        const article = articles.find(a => a.slug === match.params.slug);
+
+        if (article) {
+          return <Article article={article} />;
+        }
+          
+        history.push('/not-found');
+      }}
+    />
+
+    <Route
+      path="/not-found"
+      exact
+      component={FourOhFour}
+    />
+
+    <Route
+      path="/"
+      exact
+      render={() => <CardList articles={articles} tags={tags} />}
+    />
+
     <Sidebar tags={tags} setTags={setTags} />
   </>;
 }
 
+const ComposedApp = withRouter(App);
+
+function RoutedApp () {
+  return <Router>
+    <ComposedApp />
+  </Router>
+}
+
 ReactDOM.render(
-  <App />,
+  <RoutedApp />,
   document.getElementById('main')
 );

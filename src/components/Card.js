@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default ({article, onReadMore}) => {
   return (
@@ -8,9 +9,9 @@ export default ({article, onReadMore}) => {
         <h2>{article.title}</h2>
         <p>{article.blurb}</p>
         <div className="card-footer">
-          <button className="card-more" onClick={() => onReadMore(article)}>
+          <Link to={`item/${article.slug}`} className="card-more">
             Read More ➤
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -28,10 +28,10 @@ button {
 #main {
   display: flex;
   min-height: 100vh;
-}
 
-.cards-container {
-  flex: 1;
+  & > *:first-child {
+    flex: 1;
 
-  padding: 8px;
+    padding: 8px;
+  }
 }
