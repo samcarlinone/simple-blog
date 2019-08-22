@@ -38,6 +38,35 @@
     padding: 16px;
     width: var(--card-size);
     box-sizing: border-box;
+    position: relative;
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+
+    display: flex;
+  }
+
+  &-more {
+    margin-left: auto;
+    box-shadow: 1px 1px 2px #C5111191;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 2px 8px;
+
+    background-color: #c51111;
+
+    &:hover {
+      box-shadow: 2px 2px 4px #C5111191;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 2px #C5111191;
+    }
   }
   
   &-image {
