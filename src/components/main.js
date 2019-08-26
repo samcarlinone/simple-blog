@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 import CardList from './CardList';
 import FourOhFour from './FourOhFour';
 
-import {articles} from './articles';
+import {articles} from '../items/articles';
 import {tagList} from './tags';
 import Article from './Article';
 

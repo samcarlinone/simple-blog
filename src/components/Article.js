@@ -1,9 +1,15 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 export default ({article}) => {
   return (
     <div className="article">
-      <h1>{article.title}</h1>
+      <div className="article-card">
+        <ReactMarkdown
+          source={article.markdown}
+          escapeHtml={false}
+        />
+      </div>
     </div>
   );
 }

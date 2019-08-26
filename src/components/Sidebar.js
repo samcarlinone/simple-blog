@@ -3,8 +3,17 @@ import Envelope from '../images/baseline-email-24px.svg';
 import Octicon from '../images/Octicons-mark-github.svg';
 import SidebarTags from './SidebarTags';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
-export default ({tags, setTags}) => {
+const Sidebar = ({tags, setTags, location}) => {
+  let sidebarWidget = null;
+
+  if (location.pathname === '/')
+    sidebarWidget = <SidebarTags tags={tags} setTags={setTags} />;
+
+  if (location.pathname.startsWith('/item/'))
+    sidebarWidget = null;
+
   return (
     <div className="sidebar">
       <h1 className="sidebar-title">
@@ -12,7 +21,7 @@ export default ({tags, setTags}) => {
           Code && Comments
         </Link>
       </h1>
-      <SidebarTags tags={tags} setTags={setTags} />
+      {sidebarWidget}
       <div className="sidebar-about">
         <p>Hi, I'm Sam. Computer Science student at Grove City College.</p>
         <p>I've specialized in web applications and game development. And have wide experience in many areas, from algorithms to robotics.</p>
@@ -28,3 +37,5 @@ export default ({tags, setTags}) => {
     </div>
   )
 }
+
+export default withRouter(Sidebar);
