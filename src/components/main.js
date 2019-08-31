@@ -14,6 +14,8 @@ function App ({history}) {
   const [tags, setTags] = useState(tagList.map(tag => ({tag, active: false})));
 
   return <>
+    <Sidebar tags={tags} setTags={setTags} />
+
     <Route 
       path="/item/:slug" 
       render={({match}) => {
@@ -38,8 +40,6 @@ function App ({history}) {
       exact
       render={() => <CardList articles={articles} tags={tags} />}
     />
-
-    <Sidebar tags={tags} setTags={setTags} />
   </>;
 }
 
