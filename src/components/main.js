@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
 import Sidebar from './Sidebar';
 import CardList from './CardList';
 import FourOhFour from './FourOhFour';
+import {useWindowDimensions} from './utility';
 
 import {articles} from '../items/articles';
 import {tagList} from './tags';
@@ -13,8 +14,13 @@ import Article from './Article';
 function App ({history}) {
   const [tags, setTags] = useState(tagList.map(tag => ({tag, active: false})));
 
+  const {width} = useWindowDimensions();
+
   return <>
-    <Sidebar tags={tags} setTags={setTags} />
+    {width < 870 
+      ? <div>Mobile</div>
+      : <Sidebar tags={tags} setTags={setTags} />
+    }
 
     <Route 
       path="/item/:slug" 
