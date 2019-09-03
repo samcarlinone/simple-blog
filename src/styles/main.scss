@@ -41,8 +41,11 @@ button {
 
     padding: 8px;
 
-    overflow-x: hidden;
-    overflow-y: scroll;
+    @include not-mobile {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
     height: 100vh;
     box-sizing: border-box;
   }

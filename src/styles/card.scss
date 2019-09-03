@@ -1,6 +1,14 @@
 
+@import 'mixins';
+
 .card {
   --card-size: 280px;
+
+  @include mobile {
+    --card-size: 90vw;
+    
+    flex-direction: column;
+  }
 
   margin: 8px;
 
@@ -16,6 +24,7 @@
   
     position: absolute;
     right: 0;
+    top: 0;
   }
   
   &::before {
