@@ -1,0 +1,18 @@
+.mobile-sidebar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &-toggle {
+    font-size: 2rem;
+    padding: 8px;
+    border-bottom: 1px solid #c51111;
+    margin-bottom: -1px;
+
+    font-family: var(--title-font);
+  }
+}

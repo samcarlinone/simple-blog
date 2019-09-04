@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
 
 import Sidebar from './Sidebar';
+import MobileSidebar from './MobileSidebar';
 import CardList from './CardList';
 import FourOhFour from './FourOhFour';
 import {useWindowDimensions} from './utility';
@@ -17,8 +18,8 @@ function App ({history}) {
   const {width} = useWindowDimensions();
 
   return <>
-    {width < 870 
-      ? <div>Mobile</div>
+    {width < 860 
+      ? <MobileSidebar tags={tags} setTags={setTags} />
       : <Sidebar tags={tags} setTags={setTags} />
     }
 

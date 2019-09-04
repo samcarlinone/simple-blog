@@ -1,7 +1,12 @@
-@import 'card', 'sidebar', 'sidebartags', 'article', 'mixins';
+@import 'card', 'sidebar', 'sidebartags', 'article', 'mobile_sidebar', 'mixins';
+
+* {
+  --body-font: 'Sarala', sans-serif;
+  --title-font: 'Bungee', sans-serif;
+}
 
 html {
-  font-family: 'Sarala', sans-serif;
+  font-family: var(--body-font);
 
   line-height: 1.25rem;
   font-size: 1rem;
@@ -10,7 +15,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bungee', sans-serif;
+  font-family: var(--title-font);
 }
 
 h1 {
