@@ -1,0 +1,36 @@
+
+a {
+  &:link {
+    color: #c51111;
+  }
+
+  &:visited {
+    color: scale-color(#c51111, $saturation: -10%, $lightness: -20%);
+  }
+
+  &:hover {
+    color: scale-color(#c51111, $saturation: -60%, $lightness: +30%);
+  }
+
+  &:active {
+    color: scale-color(#c51111, $saturation: -20%, $lightness: +30%);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title-font);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+button {
+  cursor: pointer;
+}

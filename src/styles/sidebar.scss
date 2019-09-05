@@ -7,7 +7,7 @@
 
   box-sizing: border-box;
 
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: var(--grey-border);
   background-color: #fff;
 
   &-title {
@@ -37,24 +37,6 @@
   &-link {
     display: flex;
     align-items: center;
-
-    & > a {
-      &:link {
-        color: #c51111;
-      }
-
-      &:visited {
-        color: scale-color(#c51111, $saturation: -30%, $lightness: -40%);
-      }
-
-      &:hover {
-        color: scale-color(#c51111, $lightness: +30%);
-      }
-
-      &:active {
-        color: scale-color(#c51111, $lightness: +50%);
-      }
-    }
 
     &-icon {
       margin: 2px 0;

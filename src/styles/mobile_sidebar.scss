@@ -1,18 +1,37 @@
 .mobile-sidebar {
   width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: stretch;
 
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  
   cursor: pointer;
 
-  &-toggle {
-    font-size: 2rem;
-    padding: 8px;
-    border-bottom: 1px solid #c51111;
-    margin-bottom: -1px;
+  font-size: 2rem;
+  font-family: var(--title-font);
 
-    font-family: var(--title-font);
+  border-bottom: var(--grey-border);
+
+  & > div {
+    padding: 8px;
+
+    display: flex;
+    justify-content: center;
+
+    &:not(:last-child) {
+      margin: 8px;
+    }
+  }
+
+  &-toggle {
+    display: inline-block;
+    margin: -8px;
+    margin-bottom: -9px;
+    padding: 8px;
+    
+    border-bottom: 1px solid #c51111;
+
+    text-align: center;
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Envelope from '../images/baseline-email-24px.svg';
 import Octicon from '../images/Octicons-mark-github.svg';
 import SidebarTags from './SidebarTags';
@@ -6,6 +6,20 @@ import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
 const MobileSidebar = ({tags, setTags, location}) => {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    // Close the menu if the user clicks elsewhere
+    if (!open) return;
+
+    function close() {
+      setOpen(false);
+    }
+
+    window.addEventListener('click', close);
+    return () => window.removeEventListener('click', close);
+  }, [open]);
+
   let sidebarWidget = null;
 
   if (location.pathname === '/')
@@ -14,9 +28,20 @@ const MobileSidebar = ({tags, setTags, location}) => {
   if (location.pathname.startsWith('/item/'))
     sidebarWidget = null;
 
+  const content = <>
+    <div>
+      <Link to="/">Home</Link>
+    </div>
+  </>;
+
   return (
     <div className="mobile-sidebar">
-      <div className="mobile-sidebar-toggle">Menu</div>
+      {open ? content : null}
+      <div onClick={() => setOpen(!open)}>
+        <div className="mobile-sidebar-toggle">
+          {open ? 'Close' : 'Menu'}
+        </div>
+      </div>
       {/* {sidebarWidget}
       <div className="sidebar-about">
         <p>Hi, I'm Sam. Computer Science student at Grove City College.</p>

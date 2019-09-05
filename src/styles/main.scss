@@ -1,8 +1,11 @@
-@import 'card', 'sidebar', 'sidebartags', 'article', 'mobile_sidebar', 'mixins';
+@import 'global', 'mixins';
+@import 'card', 'sidebar', 'sidebartags', 'article', 'mobile_sidebar';
 
 * {
   --body-font: 'Sarala', sans-serif;
   --title-font: 'Bungee', sans-serif;
+
+  --grey-border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -12,24 +15,6 @@ html {
   font-size: 1rem;
 
   background-color: #eee;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--title-font);
-}
-
-h1 {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-button {
-  cursor: pointer;
 }
 
 #main {
