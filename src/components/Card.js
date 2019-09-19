@@ -8,6 +8,7 @@ export default ({article, onReadMore}) => {
       <div className="card-content">
         <h2>{article.title}</h2>
         <p>{article.blurb}</p>
+        <div className="card-footer-spacer"></div>
         <div className="card-footer">
           <Link to={`item/${article.slug}`} className="card-more">
             Read More ➤
