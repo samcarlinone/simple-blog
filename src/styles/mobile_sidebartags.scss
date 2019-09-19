@@ -1,28 +1,25 @@
-.sidebartags-container {
-  min-width: 100%;
-
-  h3 {
-    margin: 0 8px 8px 8px;
-  }
-}
-.sidebartags {
-  display: flex;
-
-  min-width: 100%;
+.mobile-sidebartags {
   padding: 4px;
 
-  &-tag {
-    padding: 4px;
+  & > div {
+    font-family: var(--body-font);
+    font-size: 1rem;
+
+    padding: 2px;
     margin: 4px;
 
     display: flex;
     align-items: center;
-    border: 1px solid #c51111;
-
-    cursor: pointer;
 
     text-transform: capitalize;
     user-select: none;
+  }
+
+  &-tag {
+    border: 1px solid #c51111;
+
+    cursor: pointer;
+    
 
     & > svg {
       margin-right: 4px;
