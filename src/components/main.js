@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import MobileSidebar from './MobileSidebar';
 import CardList from './CardList';
 import FourOhFour from './FourOhFour';
+import AboutMe from './AboutMe';
 import {useWindowDimensions} from './utility';
 
 import {articles} from '../items/articles';
@@ -34,6 +35,12 @@ function App ({history}) {
           
         history.push('/not-found');
       }}
+    />
+
+    <Route
+      path="/about-me"
+      exact
+      component={AboutMe}
     />
 
     <Route

@@ -5,6 +5,8 @@ import SidebarTags from './SidebarTags';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
+import {about} from '../items/about';
+
 const Sidebar = ({tags, setTags, location}) => {
   let sidebarWidget = null;
 
@@ -23,16 +25,7 @@ const Sidebar = ({tags, setTags, location}) => {
       </h1>
       {sidebarWidget}
       <div className="sidebar-about">
-        <p>Hi, I'm Sam. Computer Science student at Grove City College.</p>
-        <p>I've specialized in web applications and game development. And have wide experience in many areas, from algorithms to robotics.</p>
-        <div className="sidebar-link">
-          <Envelope className="sidebar-link-icon" />
-          <a href="mailto: samcarlinone@gmail.com">samcarlinone@gmail.com</a>
-        </div>
-        <div className="sidebar-link">
-          <Octicon className="sidebar-link-icon" viewBox="0 0 1024 1024" />
-          <a href="https://github.com/samcarlinone" target="_blank">github.com/samcarlinone</a>
-        </div>
+        {about}
       </div>
     </div>
   )

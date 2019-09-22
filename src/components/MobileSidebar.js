@@ -12,8 +12,9 @@ const MobileSidebar = ({tags, setTags, location}) => {
   if (location.pathname === '/') {
     content = open ? (
       <>
+        <h1 className="mobile-sidebar-title">Code & Comments</h1>
         <div>
-          <Link to="/about-me">About Me</Link>
+          <Link to="/about-me" className="mobile-sidebar-about">About Me</Link>
         </div>
         <MobileSidebarTags tags={tags} setTags={setTags} />
       </>
