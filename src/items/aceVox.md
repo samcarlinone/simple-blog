@@ -18,3 +18,4 @@ Another interesting aspect was the way the voxel data for each chunk is meshed. 
 ### Final Thoughts
 From a code style and organization standpoint I think this project is of middling quality, however this project suffered from my lack of knowledge when it came to many of the common approaches to optimizations and algorithms available. If I wanted to work on this project again I would probably rebuild it from the ground up and try to find more efficient ways of processing and pipelining the data to better fit the demands of the system.
 
+Find the code on github: [https://github.com/samcarlinone/ace-vox](https://github.com/samcarlinone/ace-vox)
