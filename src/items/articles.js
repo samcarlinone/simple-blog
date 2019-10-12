@@ -4,7 +4,7 @@ import {readFileSync} from 'fs';
 
 export const articles = [
   {
-    thumb: 'https://picsum.photos/280',
+    thumb: '/ace-vox-thumb.png',
     title: 'Ace Vox',
     slug: 'ace-vox',
     blurb: 'A WebGL voxel building game. Inspired by Minecraft. Includes rudimentary terrain generation, collision detection, block placement.',
