@@ -12,11 +12,11 @@ export const articles = [
     markdown: readFileSync(__dirname + '/aceVox.md', 'utf-8'),
   },
   {
-    thumb: 'https://picsum.photos/280/280',
-    title: 'Lorem Ipsum',
-    slug: 'lorem-ipsum',
-    blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type.',
-    tags: [],
-    markdown: '',
+    thumb: '/fractured-snake-thumb.png',
+    title: 'Fractured Snake',
+    slug: 'fractured-snake',
+    blurb: 'The only polished game I have ever released. Still available to play on Kongregate.',
+    tags: [GAME, WEB],
+    markdown: readFileSync(__dirname + '/fracturedSnake.md', 'utf-8'),
   },
-]
+];

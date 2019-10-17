@@ -5,7 +5,7 @@ First, [take Ace Vox for a spin](/ace-vox/index.html)
 -	left click: destroy a block
 -	right click: place a block
 
-### Notes on this Project
+### About this Project
 The original goal was a Minecraft alpha clone that would run in the browser. However, I soon realized that to reach this goal would take far more time than I wanted, especially since other such projects already existed. So, I got the prototype to the minimal functional state and ceased work on it.
 
 As with many of these personal exercises my focus was less on the goal, and more on learning along the way. This project helped me deepen my understanding of OpenGL and modern graphics pipelines. In addition, it was a good exercise in architecting larger software projects.
