@@ -11,6 +11,12 @@
 
 [If the text is too small, click here to go to the fullscreen version](/battle-sheep-ai/index.html)
 
+[Link to the English rules](/battle-sheep-rules-en.png)
+
+[Link to full rules PDF](http://www.blueorangegames.eu/wp-content/uploads/2017/05/BATTLE-SHEEP_rules_ML.pdf)
+
+(Battle Sheep is Trademarked by Blue Orange games, and designed by Francesco Rotta)
+
 ### About this Project
 
 This was created as the final project for the Artificial Intelligence course at Grove City. This project was completed in collaboration with the talented Emily Wasylenko. The source code can be found on [GitHub](https://github.com/samcarlinone/BattleSheepAI)
