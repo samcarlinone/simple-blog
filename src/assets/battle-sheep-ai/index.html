@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Battle Sheep AI</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Ubuntu:700" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet">
+    <link href="elements.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+
+    <meta 
+     name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+    />
+
+    <link rel="icon" 
+      type="image/ico" 
+      href="./favicon.ico">
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="avatar-container">
+        <div class="avatar">
+          <img src="icons/businessman.svg" id="player"/>
+          <img src="icons/robot.svg" id="ai"/>
+        </div>
+      </div>
+
+      <div class="controls"></div>
+
+      <div class="ai-thinking">
+        <img src="icons/hourglass.svg" id="hourglass"/>
+      </div>
+      
+    </div>
+    
+    <div id="main"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.12/svg.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.12/svg.min.js.map"></script>
+
+    <script src="Util.js"></script>
+    <script src="Board.js"></script>
+    <script src="BoardRenderer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

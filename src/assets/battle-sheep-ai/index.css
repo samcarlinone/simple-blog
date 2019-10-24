@@ -1,0 +1,165 @@
+body {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20pt;
+
+  overflow: hidden;
+}
+
+#main, svg {
+  flex-grow: 1;
+  max-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  padding: 2vmin;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  user-select: none;
+
+  flex-basis: 26vmin;
+}
+
+@media (orientation: portrait) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+  }
+}
+
+.error-span {
+  text-decoration: solid underline red;
+}
+
+.game-over {
+  text-align: center;
+}
+
+/* Avatar */
+.avatar-container {
+  width: 14vmin;
+  height: 14vmin;
+  perspective: 600px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  transition: transform 500ms cubic-bezier(0.465, -0.580, 0.550, 1.540);
+  transform-style: preserve-3d;
+}
+
+.is-ai .avatar {
+  transform: rotateY(180deg);
+}
+
+.avatar img {
+  position: absolute;
+  width:100%;
+  height:100%;
+  backface-visibility: hidden;
+}
+
+#ai {
+  transform: rotateY(180deg);
+}
+
+/* Controls */
+.controls {
+  margin: auto;
+}
+
+.is-ai .controls {
+ display: none;
+}
+
+/* Board */
+.hex {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 0.1;
+
+  fill: hsl(120, 60%, 83%);
+  stroke: hsl(120, 47%, 50%);
+}
+
+.selected-hex {
+  fill: hsl(240, 60%, 83%);
+  stroke: hsl(0, 47%, 50%);
+}
+
+.line-hex {
+  /* fill: hsl(0, 40%, 93%); */
+  stroke: hsla(0, 46%, 63%, 0.5);
+}
+
+.white-hex {
+  /* fill: hsl(0, 60%, 83%); */
+  stroke: hsla(0, 47%, 50%, 0.5);
+}
+
+.no-hex {
+  fill: #fff;
+  stroke: transparent;
+}
+
+.red-circle {
+  fill: rgb(216, 62, 82);
+}
+
+.blue-circle {
+  fill: rgb(100, 100, 185);
+}
+
+.white-circle {
+  fill: rgb(204, 137, 146);
+}
+
+.hex-label {
+  font-size: .05vmin;
+  font-weight: bold;
+  font-family: monospace;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Hourglass Anim */
+.ai-thinking {
+  margin: auto;
+  display: none;
+}
+
+.is-ai .ai-thinking {
+  display: initial;
+}
+
+#hourglass {
+  width: 10vmin;
+  height: 10vmin;
+
+  animation: hourglass 2s infinite cubic-bezier(0.450, -0.580, 0.450, 1.600);
+}
+
+@keyframes hourglass {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(0deg); }
+  90% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}

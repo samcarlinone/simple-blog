@@ -19,4 +19,12 @@ export const articles = [
     tags: [GAME, WEB],
     markdown: readFileSync(__dirname + '/fracturedSnake.md', 'utf-8'),
   },
+  {
+    thumb: '/battle-sheep-ai-thumb.png',
+    title: 'Battle Sheep AI',
+    slug: 'battle-sheep-ai',
+    blurb: 'A playable version of the board game Battle Sheep. Pits the player against a Min-Max AI opponent.',
+    tags: [GAME, WEB],
+    markdown: readFileSync(__dirname + '/battleSheepAi.md', 'utf-8'),
+  },
 ];

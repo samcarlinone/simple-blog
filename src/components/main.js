@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 
 import Sidebar from './Sidebar';
 import MobileSidebar from './MobileSidebar';
@@ -24,36 +24,36 @@ function App ({history}) {
       : <Sidebar tags={tags} setTags={setTags} />
     }
 
-    <Route 
-      path="/item/:slug" 
-      render={({match}) => {
-        const article = articles.find(a => a.slug === match.params.slug);
-
-        if (article) {
-          return <Article article={article} />;
-        }
+    <Switch>
+      <Route 
+        path="/item/:slug" 
+        render={({match}) => {
+          const article = articles.find(a => a.slug === match.params.slug);
           
-        history.push('/not-found');
-      }}
-    />
+          if (article) {
+            return <Article article={article} />;
+          }
+          
+          history.push('/not-found');
+        }}
+      />
 
-    <Route
-      path="/about-me"
-      exact
-      component={AboutMe}
-    />
+      <Route
+        path="/about-me"
+        exact
+        component={AboutMe}
+      />
 
-    <Route
-      path="/not-found"
-      exact
-      component={FourOhFour}
-    />
+      <Route
+        path="/"
+        exact
+        render={() => <CardList articles={articles} tags={tags} />}
+      />
 
-    <Route
-      path="/"
-      exact
-      render={() => <CardList articles={articles} tags={tags} />}
-    />
+      <Route
+        component={FourOhFour}
+      />
+    </Switch>
   </>;
 }
 

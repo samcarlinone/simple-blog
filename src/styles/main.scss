@@ -1,8 +1,8 @@
 @import 'global', 'mixins';
-@import 'card', 'sidebar', 'sidebartags', 'article', 'mobile_sidebar', 'mobile_sidebartags';
+@import 'card', 'sidebar', 'sidebartags', 'article', 'mobile_sidebar', 'mobile_sidebartags', 'not_found';
 
 * {
-  --body-font: 'Sarala', sans-serif;
+  --body-font: 'Noto Sans', sans-serif;
   --title-font: 'Bungee', sans-serif;
 
   --grey-border: 1px solid rgba(0, 0, 0, 0.2);
