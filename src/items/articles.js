@@ -4,6 +4,14 @@ import {readFileSync} from 'fs';
 
 export const articles = [
   {
+    thumb: '',
+    title: 'Welcome to Web',
+    slug: 'welcome-to-web',
+    blurb: 'A crash course in everything you need for frontend web development.',
+    tags: [WEB],
+    markdown: readFileSync(__dirname + '/webCrashCourse.md', 'utf-8'),
+  },
+  {
     thumb: '/ace-vox-thumb.png',
     title: 'Ace Vox',
     slug: 'ace-vox',

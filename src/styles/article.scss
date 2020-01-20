@@ -12,10 +12,12 @@
 
     padding: 0 32px;
     max-width: 34rem;
+    position: relative;
 
     @include mobile {
       padding: 0 16px;
       padding-bottom: 16px;
+      max-width: calc(100vw - 64px);
     }
 
     table {
@@ -32,6 +34,27 @@
 
     p {
       line-height: 1.45rem;
+    }
+
+
+    .math {
+      position: relative;
+
+      & > p {
+        max-width: 100%;
+        overflow: auto;
+      }
+
+      &::after {
+        box-shadow: inset -10px 0px 6px -8px rgba(255, 255, 255, 1);
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+      }
     }
   }
 }
