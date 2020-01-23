@@ -5,9 +5,9 @@ import {readFileSync} from 'fs';
 export const articles = [
   {
     thumb: '',
-    title: 'Welcome to Web',
-    slug: 'welcome-to-web',
-    blurb: 'A crash course in everything you need for frontend web development.',
+    title: 'Welcome to React',
+    slug: 'welcome-to-react',
+    blurb: 'A crash course in React and React Hooks.',
     tags: [WEB],
     markdown: readFileSync(__dirname + '/webCrashCourse.md', 'utf-8'),
   },

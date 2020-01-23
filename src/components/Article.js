@@ -7,22 +7,11 @@ export default ({article}) => {
     // Codepen
     window.__CPEmbed()
 
-    // MathJax
-    window.mathJaxDirty = true
-
-    if (!window.mathJaxInProgress && typeof MathJax !== 'undefined') TryTypeset()
-
-    async function TryTypeset() {
-      window.mathJaxInProgress = true
-
-      while (window.mathJaxDirty) {
-        window.mathJaxDirty = false
-        await MathJax.typesetPromise()
-      }
-
-      window.mathJaxInProgress = false
-    }
-  }, [article, typeof MathJax])
+    // Highlight JS
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }, [article])
 
   return (
     <div className="article">

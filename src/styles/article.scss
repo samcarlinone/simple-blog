@@ -11,7 +11,6 @@
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 
     padding: 0 32px;
-    max-width: 34rem;
     position: relative;
 
     @include mobile {
@@ -20,7 +19,7 @@
       max-width: calc(100vw - 64px);
     }
 
-    table {
+    & > table {
       width: 100%;
 
       th {
@@ -28,12 +27,17 @@
       }
     }
 
-    img {
+    & > img {
       max-width: 100%;
     }
 
-    p {
+    & > p {
       line-height: 1.45rem;
+      max-width: 34rem;
+
+      code {
+        background-color: #f0f0f0;
+      }
     }
 
 
