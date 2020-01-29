@@ -1,10 +1,4 @@
-# Welcome to React
-
-<!-- <p class="codepen" data-height="308" data-theme-id="default" data-default-tab="html,result" data-user="samcarlinone" data-slug-hash="BayqdwG" style="height: 308px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="HTML Tags Demo">
-  <span>See the Pen <a href="https://codepen.io/samcarlinone/pen/BayqdwG">
-  HTML Tags Demo</a> by samcarlinone (<a href="https://codepen.io/samcarlinone">@samcarlinone</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p> -->
+# JS for React
 
 So before we get started with React, let's take a quick look at some of the JavaScript syntax that might seem weird to Java and C people.
 
@@ -300,3 +294,78 @@ x, y => y + x * 2 // 🛑 whack, compile error!
 // Take it up with the complaints department 🗑️
 ```
 
+### Array Comprehensions
+
+Alright, time for some of the cool stuff. We'll get to some actual React soon, but first, let's see what we can do with functions and JS arrays.
+
+Imagine you have, say, a list of decks. These decks are going to be displayed somewhere in your application but you need to first filter them by some criteria.
+
+```js
+decks = [
+  { title: 'The Wonderful World of Web', cards: 10 },
+  { title: 'In the Eye of the Storm: Intro C++', cards: 93 },
+  { title: 'Ayes and Eyes: Anatomy and Government', cards: 12 },
+  { title: 'Big Paintins: Art History for DJs', cards: 420 },
+  { title: 'Blind Eyes: How Democracy Failed Hip-Hop', cards: 69, archived: true },
+]
+
+// Alright we've got our deck objects in an array
+// Each one has a title and cards, one has archived: true
+
+// First let's do a search for decks containing the string 'Eye' in the title
+// In JS a quick way to check for a substring is indexOf
+// this function will return a -1 if a string is not found
+// and the index of the first matching character otherwise
+
+// Mozilla Developer Network has great documentation on all of the JS
+// functions we'll be using, just search mdn indexOf for example
+
+// First here is a long way
+searchTerm = 'Eye'
+searchResult = []
+
+for (i = 0; i < decks.length; i++) {
+  if (decks[i].title.indexOf(searchTerm) !== -1) {
+    searchResult.push(decks[i]) // push adds an item to the end of an array
+  }
+}
+
+// Here is a functional way
+searchTerm = 'Eye'
+searchResult = decks.filter(deck => deck.title.indexOf(searchTerm) !== -1) 
+
+// returns [
+// {title: "In the Eye of the Storm: Intro C++", cards: 93},
+// {title: "Ayes and Eyes: Anatomy and Government", cards: 12},
+// {title: "Blind Eyes: How Democracy Failed Hip-Hop", cards: 69
+// , archived: true},
+// ]
+```
+
+So let's break this down. First we are calling a method on JS arrays, `filter`. `filter` takes a function as an argument and returns a new array. That's important, note that deck didn't change, which is why we put the result in a new variable. Then inside the call to `filter` we have an arrow function that takes a single argument, gets the title and calls `indexOf` on it with the `searchTerm` defined on the previous line and checks if `indexOf` doesn't equal -1 (meaning a match was found).
+
+This might not seem much shorter, but as things get more complex this type of approach gets more powerful. Since each function returns a new array we can chain functions.
+
+```js
+// Include decks array from earlier
+
+cardsCount = decks
+  .filter(deck => deck.title.indexOf(searchTerm) !== -1) // All decks with Eye in the title
+  .map(deck => deck.cards)
+  .reduce((total, deckCards) => total + deckCards) // = 174, the count of the filtered cards
+
+// map returns a new array with the results of calling the function
+// think of the OnEvery function we wrote earlier
+// so [1, 2, 3].map(n => n * n) = [1, 4, 9]
+
+// reduce gives the function each element one at a time, and the last returned value
+// so [1, 2, 3].reduce((a, t) => a + t) = 6
+// reduce is one of the most confusing ones, you probably won't use it
+// except when you need to add up an array of numbers
+```
+
+You should be running this code to see it in action. See if you can modify the snippet above to filter out the one deck with archived true in addition to all the other stuff we are doing. You should get 105 as your new count. Remember that the order we call the functions on our array matters. You can't filter after you've transformed the decks into numbers for example.
+
+For more on arrays go here: [https://jrsinclair.com/javascript-array-methods-cheat-sheet](https://jrsinclair.com/javascript-array-methods-cheat-sheet)
+
+Unfortunately, that's all we have time for today. Look in the project to see if you can see the concepts we've talked about in action. Tune in next time for the complete explanation of React.

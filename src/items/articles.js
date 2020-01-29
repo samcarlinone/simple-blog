@@ -4,10 +4,18 @@ import {readFileSync} from 'fs';
 
 export const articles = [
   {
-    thumb: '',
-    title: 'Welcome to React',
-    slug: 'welcome-to-react',
-    blurb: 'A crash course in React and React Hooks.',
+    thumb: '/react-logo.png',
+    title: 'React is 2020',
+    slug: 'react-tutorial',
+    blurb: 'Clear and easy to understand with this tutorial.',
+    tags: [WEB],
+    markdown: readFileSync(__dirname + '/reactCrashCourse.md', 'utf-8'),
+  },
+  {
+    thumb: '/js-cube.png',
+    title: 'JS for React',
+    slug: 'intro-to-js',
+    blurb: 'A crash course in JS you\'ll need for React',
     tags: [WEB],
     markdown: readFileSync(__dirname + '/webCrashCourse.md', 'utf-8'),
   },

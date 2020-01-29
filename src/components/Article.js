@@ -5,7 +5,7 @@ export default ({article}) => {
 
   useEffect(() => {
     // Codepen
-    window.__CPEmbed()
+    window.__CPEmbed && window.__CPEmbed()
 
     // Highlight JS
     document.querySelectorAll('pre code').forEach((block) => {

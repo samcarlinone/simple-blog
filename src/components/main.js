@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
+import { HashRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 
 import Sidebar from './Sidebar';
 import MobileSidebar from './MobileSidebar';
